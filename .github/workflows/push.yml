@@ -30,7 +30,7 @@ jobs:
       if: github.ref == 'refs/heads/main'
       uses: ad-m/github-push-action@master
       with:
-        branch: ${{ github.ref }}
+        branch: ${{ github.head_ref }}
         tags: true
         # We use a personal access token to enable CI to run git-push to branches with protections rules
         github_token: ${{ secrets.PAT}}
