@@ -20,6 +20,8 @@ jobs:
       
     - name: commit
       run: |
+        git config --global user.email "krishnasanthanam6893@gmail.com"
+        git config --global user.name "krishnakumar6893"
         touch test.txt
         git add .
         git commit -m "test"
