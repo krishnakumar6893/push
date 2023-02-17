@@ -1,0 +1,15 @@
+name: push
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+  pull_request:
+
+
+jobs:
+
+  push:
+
+    runs-on: ubuntu-latest
