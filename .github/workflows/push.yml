@@ -13,3 +13,22 @@ jobs:
   push:
 
     runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+      
+    - name: commit
+      run: |
+        touch test.txt
+        git add .
+        git commit -m "test"
+        
+    - name: Push changes to main
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production'
+      uses: ad-m/github-push-action@master
+      with:
+        branch: ${{ github.ref }}
+        tags: true
+        # We use a personal access token to enable CI to run git-push to branches with protections rules
+        token: ${{ secrets.PAT}}
