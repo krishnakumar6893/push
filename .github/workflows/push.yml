@@ -33,4 +33,4 @@ jobs:
         branch: ${{ github.head_ref }}
         tags: true
         # We use a personal access token to enable CI to run git-push to branches with protections rules
-        github_token: ${{ secrets.PAT}}
+        github_token: ${{ secrets.PAT }}
