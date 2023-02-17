@@ -27,7 +27,7 @@ jobs:
         git commit -m "test"
         
     - name: Push changes to main
-      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production'
+      if: github.ref == 'refs/heads/main'
       uses: ad-m/github-push-action@master
       with:
         branch: ${{ github.ref }}
